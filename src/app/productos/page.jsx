@@ -2,37 +2,43 @@ import React from 'react'
 import '../../app/globals.css'
 import CartasDeProductos from '../../../components/Productos.jsx'
 
+
 const Ejemplares = [
   {
       id: 'Casco de Polietileno',
       precio: '$--',
-      cantidad: '20 Unidades'
+      cantidad: '20 Unidades',
+      img: '/casco.jpg'
   },
   {
       id: 'Chalecos',
       precio: '$--',
-      cantidad: '20 Unidades'
+      cantidad: '20 Unidades',
+      img: '/chaleco.jpg',
   },
   {
       id: 'Lentes de Seguridad',
       precio: '$--',
-      cantidad: '20 Unidades'
+      cantidad: '20 Unidades',
+      img: '/descarga.jpg'
   },
   {
       id: 'Guantes de Cuero',
       precio: '$--',
-      cantidad: '5 Unidades'
+      cantidad: '5 Unidades',
+      img: '/guantes.jpg'
   },
   {
       id: 'Mascara Panoramica',
       precio: '$--',
-      cantidad: 'Unidad'
+      cantidad: 'Unidad',
+      img: '/mascara.jpg'
   },
   {
       id: 'Protectores Auditivos',
       precio: '$--',
-      cantidad: 'Unidad'
-      
+      cantidad: 'Unidad',
+      img: '/protector.jpg'
   }
 
 ]
@@ -58,15 +64,16 @@ const productos = () => {
         </nav>
         
       </header>
-      <main className='grid grid-cols-2 grid-rows-2 m-4 items-center justify-center'>  
-        {Ejemplares.map(eje => (
-          <CartasDeProductos 
-          key={eje.id}
-          id={eje.id}
-          precio={eje.precio}
-          cantidad={eje.cantidad}
-          />
-        ))}
+      <main className='grid grid-cols-3 grid-rows-2 m-4 p-4 px-12'> 
+          {Ejemplares.map(eje => (
+            <CartasDeProductos 
+            key={eje.id}
+            id={eje.id}
+            precio={eje.precio}
+            cantidad={eje.cantidad}
+            img={eje.img}
+            />
+          ))}
       </main>
     </>
   )

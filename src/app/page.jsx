@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div className='h-screen flex flex-col items-center justify-center '>
-        <div className='flex flex-col items-center justify-center bg-gray-200 w-80 h-96 rounded-lg'>
+        <div className='flex flex-col items-center justify-center bg-gray-300 w-80 h-96 rounded-lg'>
           <div>
             <h1>Inicia Sesión</h1>
           </div>
