@@ -5,6 +5,43 @@
 .hola{
     display: flex;
     justify-content: space-between;
-    margin: 16px;
+    margin: 8px;
     border-bottom: 1px solid #DDE6ED;
+}
+.si{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #DDE6ED;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-weight: 700;
+    font-size:x-large;
+    box-sizing: border-box;
+    color: #5f6368;
+}
+.no{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #DDE6ED;
+    padding-left: 16px;
+    padding-right: 16px;
+    color:#5f6368;
+    font-weight: 500;
+
+}
+.se{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #DDE6ED;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #C7C7C7;
+    font-weight: 500;
+}
+.si:hover,
+.no:hover{
+    color: #000;
 }
