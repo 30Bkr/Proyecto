@@ -11,8 +11,8 @@ const inventario = () => {
             <li className='si'><a href="/principal">Inicio</a></li>
             <li className='no'><a href="/productos">Productos</a></li>
             <li className='no'><a href="/ventas">Ventas</a></li>
-            <li className='no'><a href="agregar">Agregar</a></li>
             <li className='no'><a href="/inventario">Inventario</a></li>
+            <li className='no'><a href="agregar">Agregar</a></li>
 
           </ul>
         </div>

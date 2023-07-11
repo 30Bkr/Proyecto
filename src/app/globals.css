@@ -65,3 +65,42 @@
     margin-bottom: 16px;
     font-size: 30px;
 }
+.gridr{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin-top: 44px;
+}
+.ppp{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+.pppp{
+    display: flex;
+    width: 100px;
+    color: gray;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    border: dotted;
+    cursor: pointer;
+}
+.p{
+    width: 320px;
+    height: 580px;
+    padding: 16px;
+    border: 1px solid blue;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px -8px blue;
+}
+
+.p_2{
+    width: 320px;
+    height: 220px;
+    padding: 16px;
+    border: 1px solid blue;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px -8px blue;
+}

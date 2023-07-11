@@ -16,20 +16,20 @@ const data = [
     name: "Casco de Polietileno",
     codigo: "B793H1LU",
     departement: "Protector de craneo para trabajos de riesgo de alto impacto",
-    cantidad: "560",
+    cantidad: "1360",
   },
   {
     name: "Chalecos",
     codigo: "OUI2H1LV",
     departement:
       "Elemento de seguridad que señala posición y evita un posible atropello",
-    cantidad: "520",
+    cantidad: "1220",
   },
   {
     name: "Lentes de Seguridad",
     codigo: "A7B309JD",
     departement: "Protector visual para trabajos de riesgo de alto impacto",
-    cantidad: "150",
+    cantidad: "750",
   },
   {
     name: "Guantes de Cuero",
@@ -61,7 +61,7 @@ const DatosT = () => (
           <TableHeaderCell>Código</TableHeaderCell>
           <TableHeaderCell>Nombre</TableHeaderCell>
           <TableHeaderCell>Descripcion</TableHeaderCell>
-          <TableHeaderCell>Cantidad</TableHeaderCell>
+          <TableHeaderCell>Cantidad(unidad)</TableHeaderCell>
         </TableRow>
       </TableHead>
       <TableBody>

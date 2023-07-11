@@ -19,25 +19,25 @@ const Ejemplares = [
   {
       id: 'Lentes de Seguridad',
       precio: '$--',
-      cantidad: '20 Unidades',
+      cantidad: '6 Unidades',
       img: '/descarga.jpg'
   },
   {
       id: 'Guantes de Cuero',
       precio: '$--',
-      cantidad: '5 Unidades',
+      cantidad: '6 Unidades',
       img: '/guantes.jpg'
   },
   {
       id: 'Mascara Panoramica',
       precio: '$--',
-      cantidad: 'Unidad',
+      cantidad: '1 Unidad',
       img: '/mascara.jpg'
   },
   {
       id: 'Protectores Auditivos',
       precio: '$--',
-      cantidad: 'Unidad',
+      cantidad: '1 Unidad',
       img: '/protector.jpg'
   }
 
@@ -53,8 +53,8 @@ const productos = () => {
             <li className='si'><a href="/principal">Inicio</a></li>
             <li className='no'><a href="/productos">Productos</a></li>
             <li className='no'><a href="/ventas">Ventas</a></li>
-            <li className='no'><a href="agregar">Agregar</a></li>
             <li className='no'><a href="/inventario">Inventario</a></li>
+            <li className='no'><a href="agregar">Agregar</a></li>
 
           </ul>
         </div>
