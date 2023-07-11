@@ -3,11 +3,11 @@ import { Card, Title, DonutChart } from "@tremor/react";
 const cities = [
   {
     name: "Casco de Polietileno",
-    sales: 950,
+    sales: 423,
   },
   {
     name: "Chalecos",
-    sales: 460,
+    sales: 389,
   },
   {
     name: "Lentes de Seguridad",

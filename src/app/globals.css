@@ -45,3 +45,23 @@
 .no:hover{
     color: #000;
 }
+.usuario{
+    background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
+    width: 94.5rem;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+.usuario_img{
+    grid-row: 1 / -1;
+    grid-column: 2;
+}
+.inventario{
+    font-weight: 900;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 30px;
+}
