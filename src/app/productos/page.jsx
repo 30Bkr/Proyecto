@@ -1,49 +1,19 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import '../../app/globals.css'
 import CartasDeProductos from '../../../components/Productos.jsx'
+// import { Ejemplares } from '../../../data/dataProductos'
+import { useTasks } from '@/context/TasksContext'
 
 
-const Ejemplares = [
-  {
-      id: 'Casco de Polietileno',
-      precio: '$--',
-      cantidad: '20 Unidades',
-      img: '/casco.jpg'
-  },
-  {
-      id: 'Chalecos',
-      precio: '$--',
-      cantidad: '20 Unidades',
-      img: '/chaleco.jpg',
-  },
-  {
-      id: 'Lentes de Seguridad',
-      precio: '$--',
-      cantidad: '6 Unidades',
-      img: '/descarga.jpg'
-  },
-  {
-      id: 'Guantes de Cuero',
-      precio: '$--',
-      cantidad: '6 Unidades',
-      img: '/guantes.jpg'
-  },
-  {
-      id: 'Mascara Panoramica',
-      precio: '$--',
-      cantidad: '1 Unidad',
-      img: '/mascara.jpg'
-  },
-  {
-      id: 'Protectores Auditivos',
-      precio: '$--',
-      cantidad: '1 Unidad',
-      img: '/protector.jpg'
-  }
 
-]
 
 const productos = () => {
+  // const [ producto, setProducto ] = useState(Ejemplares)
+  const {tasks} = useTasks()
+  console.log(tasks)
+
+
   return (
     <>
       <header >
@@ -66,7 +36,7 @@ const productos = () => {
         </nav>
       </header>
       <main className='grid grid-cols-3 grid-rows-2 m-4 p-4 px-12'> 
-          {Ejemplares.map(eje => (
+          {/* {producto.map(eje => (
             <CartasDeProductos 
             key={eje.id}
             id={eje.id}
@@ -74,7 +44,16 @@ const productos = () => {
             cantidad={eje.cantidad}
             img={eje.img}
             />
-          ))}
+          ))} */}
+          {tasks.map(taks => (
+            <CartasDeProductos 
+            key={taks.id}
+            id={taks.id}
+            precio={taks.precio}
+            cantidad={taks.cantidad}
+            img={taks.img}
+            />
+          ))} 
       </main>
     </>
   )

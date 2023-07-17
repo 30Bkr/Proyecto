@@ -15,38 +15,38 @@ const data = [
   {
     name: "Casco de Polietileno",
     codigo: "B793H1LU",
-    departement: "Protector de craneo para trabajos de riesgo de alto impacto",
+    descripcion: "Protector de craneo para trabajos de riesgo de alto impacto",
     cantidad: "1360",
   },
   {
     name: "Chalecos",
     codigo: "OUI2H1LV",
-    departement:
+    descripcion:
       "Elemento de seguridad que señala posición y evita un posible atropello",
     cantidad: "1220",
   },
   {
     name: "Lentes de Seguridad",
     codigo: "A7B309JD",
-    departement: "Protector visual para trabajos de riesgo de alto impacto",
+    descripcion: "Protector visual para trabajos de riesgo de alto impacto",
     cantidad: "750",
   },
   {
     name: "Guantes de Cuero",
     codigo: "9KW35F8V",
-    departement: "Protector de mano para trabajos de riesgo de alto impacto",
+    descripcion: "Protector de mano para trabajos de riesgo de alto impacto",
     cantidad: "230",
   },
   {
     name: "Mascara Panoramica",
     codigo: "A1B3H1LV",
-    departement: "Protector de vías respiratorios, protección ocular y facial simultanea",
+    descripcion: "Protector de vías respiratorios, protección ocular y facial simultanea",
     cantidad: "117",
   },
   {
     name: "Protectores Auditivos",
     codigo: "BBB3H1LV",
-    departement: "Protector de audicion para evitar la exposición a sonidos fuertes",
+    descripcion: "Protector de audicion para evitar la exposición a sonidos fuertes",
     cantidad: "75",
   },
   
@@ -72,7 +72,7 @@ const DatosT = () => (
               <Text>{item.name}</Text>
             </TableCell>
             <TableCell>
-              <Text>{item.departement}</Text>
+              <Text>{item.descripcion}</Text>
             </TableCell>
             <TableCell>
               <Badge color="emerald" >

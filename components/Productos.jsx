@@ -1,11 +1,13 @@
 import { Card, Metric, Text, Button, Flex } from "@tremor/react";
 import Image from 'next/image'
+import { useTasks } from "@/context/TasksContext";
 
 
 
 
-
-const CartasDeProductos = (props) => (
+const CartasDeProductos = (props) => { 
+  const {deleteTask} = useTasks()
+  return(
   <Card className="max-w-xs mx-auto m-4 flex hover:ease-in duration-300 " decoration="top" decorationColor="indigo">
     <div>
         <Text>{props.id}</Text>
@@ -24,14 +26,19 @@ const CartasDeProductos = (props) => (
     
     <div className="flex items-center justify-center">
         <Image 
-            src={props.img}
+            src={(props.img == "" ? '/casco.jpg' : props.img)}
             alt='imagen'
             className="bg-white-200"
             width={140}
             height={140}
         />
     </div>
+    <button onClick={() => {
+      const accept = window.confirm('Corfirme para eliminar');
+      if(accept) deleteTask(props.id);
+      }}>X</button>
   </Card>
-);
+)
+  };
 
 export default CartasDeProductos;

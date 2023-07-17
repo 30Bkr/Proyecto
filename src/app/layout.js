@@ -1,5 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { TasksProvider } from '@/context/TasksContext'
 
 
 
@@ -11,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='bg-gray-100'>{children}</body>
+      <body className='bg-gray-100'>
+        <TasksProvider>{children}</TasksProvider>
+      </body>
     </html>
   )
 }
