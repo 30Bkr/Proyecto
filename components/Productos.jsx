@@ -34,7 +34,7 @@ const CartasDeProductos = (props) => {
         />
     </div>
     <button onClick={() => {
-      const accept = window.confirm('Corfirme para eliminar');
+      const accept = window.confirm('Estas seguro que desea eliminar?');
       if(accept) deleteTask(props.id);
       }}>X</button>
   </Card>

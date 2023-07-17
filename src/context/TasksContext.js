@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 export const TaskContext = createContext();
 
@@ -49,7 +49,18 @@ export const TasksProvider = ({ children }) => {
         img: '/protector.jpg'
     }
   
-  ])
+  ]);
+  useEffect(()=>{
+    const item = localStorage.getItem("tasks")
+    const tasks = JSON.parse(item)
+    if (tasks.length > 0) {
+      setTasks(tasks)
+    }
+  },[])
+
+useEffect(() => {
+  localStorage.setItem('tasks', JSON.stringify(tasks))
+}, [tasks])
 
   const [inve, setInve] = useState([
     {
@@ -112,6 +123,8 @@ export const TasksProvider = ({ children }) => {
   const deleteTask = (id) => 
     setTasks(
     [...tasks.filter(task  => task.id !== id )]);
+
+  
   
 
   return (

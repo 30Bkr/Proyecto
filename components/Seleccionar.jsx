@@ -5,10 +5,10 @@ import { useTasks } from '@/context/TasksContext'
 
  function Seleccionar() {
 
-  const {inve} = useTasks()
+  const {inve, setInve} = useTasks()
   return (
     <div className="max-w-sm mx-auto space-y-6">
-      <Select>
+      <Select value={inve} onValueChange={setInve} >
         {inve.map(cada =>(
           <SelectItem value={cada.length} key={cada.id}>
           {cada.id}

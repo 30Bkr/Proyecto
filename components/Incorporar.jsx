@@ -29,6 +29,7 @@ const Incorporar = () => {
     router.push('/inventario')
 
   }
+  
 
   return (
     <>
