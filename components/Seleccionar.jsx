@@ -1,14 +1,21 @@
 import { Select, SelectItem } from "@tremor/react";
+import { useTasks } from '@/context/TasksContext'
+
 
 
  function Seleccionar() {
+
+  const {inve} = useTasks()
   return (
     <div className="max-w-sm mx-auto space-y-6">
       <Select>
-        <SelectItem value="1">
-          Casco de Polietileno
-        </SelectItem>
-        <SelectItem value="2">
+        {inve.map(cada =>(
+          <SelectItem value={cada.length} key={cada.id}>
+          {cada.id}
+          </SelectItem>
+        ))}
+        
+        {/* <SelectItem value="2">
           Chalecos
         </SelectItem>
         <SelectItem value="3">
@@ -22,7 +29,7 @@ import { Select, SelectItem } from "@tremor/react";
         </SelectItem>
         <SelectItem value="6">
           Protectores Auditivos
-        </SelectItem>
+        </SelectItem> */}
       </Select>
     </div>
   );

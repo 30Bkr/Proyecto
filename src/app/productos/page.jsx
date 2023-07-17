@@ -11,7 +11,6 @@ import { useTasks } from '@/context/TasksContext'
 const productos = () => {
   // const [ producto, setProducto ] = useState(Ejemplares)
   const {tasks} = useTasks()
-  console.log(tasks)
 
 
   return (

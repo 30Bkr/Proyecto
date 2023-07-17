@@ -9,6 +9,7 @@ export const useTasks = () => {
   return context;
 };
 
+
 export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([
     {
@@ -50,6 +51,54 @@ export const TasksProvider = ({ children }) => {
   
   ])
 
+  const [inve, setInve] = useState([
+    {
+      id: "Casco de Polietileno",
+      codigo: "B793H1LU",
+      descripcion: "Protector de craneo para trabajos de riesgo de alto impacto",
+      cantidadI: "1360",
+    },
+    {
+      id: "Chalecos",
+      codigo: "OUI2H1LV",
+      descripcion:
+        "Elemento de seguridad que señala posición y evita un posible atropello",
+      cantidadI: "1220",
+    },
+    {
+      id: "Lentes de Seguridad",
+      codigo: "A7B309JD",
+      descripcion: "Protector visual para trabajos de riesgo de alto impacto",
+      cantidadI: "750",
+    },
+    {
+      id: "Guantes de Cuero",
+      codigo: "9KW35F8V",
+      descripcion: "Protector de mano para trabajos de riesgo de alto impacto",
+      cantidadI: "230",
+    },
+    {
+      id: "Mascara Panoramica",
+      codigo: "A1B3H1LV",
+      descripcion: "Protector de vías respiratorios, protección ocular y facial simultanea",
+      cantidadI: "117",
+    },
+    {
+      id: "Protectores Auditivos",
+      codigo: "BBB3H1LV",
+      descripcion: "Protector de audicion para evitar la exposición a sonidos fuertes",
+      cantidadI: "75",
+    },
+    
+  ])
+
+  const createInve = (id, codigo, descripcion, cantidadI) => 
+  setInve([
+    ...inve, {
+      id, codigo, descripcion, cantidadI, 
+    }
+  ])
+
   const createTask = (id, precio, cantidad, img) => 
     setTasks([
       ...tasks,
@@ -69,8 +118,10 @@ export const TasksProvider = ({ children }) => {
     <TaskContext.Provider
       value={{
         tasks,
+        inve,
         createTask,
         deleteTask,
+        createInve,
       }}
     >
       {children}
