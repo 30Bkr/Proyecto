@@ -33,7 +33,7 @@ const CartasDeProductos = (props) => {
             height={140}
         />
     </div>
-    <button onClick={() => {
+    <button className="text-red-600" onClick={() => {
       const accept = window.confirm('Estas seguro que desea eliminar?');
       if(accept) deleteTask(props.id);
       }}>X</button>
