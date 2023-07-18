@@ -50,20 +50,17 @@ export const TasksProvider = ({ children }) => {
     }
   
   ]);
-
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks))
-  }, [tasks])
-
   useEffect(()=>{
     const item = localStorage.getItem("tasks")
     const tasks = JSON.parse(item)
-    if (tasks.length > 0) {
+    if (item.length > 0) {
       setTasks(tasks)
     } else {}
   },[])
 
-
+useEffect(() => {
+  localStorage.setItem('tasks', JSON.stringify(tasks))
+}, [tasks])
 
   const [inve, setInve] = useState([
     {
