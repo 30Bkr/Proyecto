@@ -50,6 +50,11 @@ export const TasksProvider = ({ children }) => {
     }
   
   ]);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
   useEffect(()=>{
     const item = localStorage.getItem("tasks")
     const tasks = JSON.parse(item)
@@ -58,9 +63,7 @@ export const TasksProvider = ({ children }) => {
     } else {}
   },[])
 
-useEffect(() => {
-  localStorage.setItem('tasks', JSON.stringify(tasks))
-}, [tasks])
+
 
   const [inve, setInve] = useState([
     {
