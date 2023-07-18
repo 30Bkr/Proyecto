@@ -53,7 +53,7 @@ export const TasksProvider = ({ children }) => {
   useEffect(()=>{
     const item = localStorage.getItem("tasks")
     const tasks = JSON.parse(item)
-    if (item.length > 0) {
+    if (tasks.length > 0) {
       setTasks(tasks)
     } else {}
   },[])
