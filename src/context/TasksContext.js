@@ -55,7 +55,7 @@ export const TasksProvider = ({ children }) => {
     const tasks = JSON.parse(item)
     if (tasks.length > 0) {
       setTasks(tasks)
-    }
+    } else {}
   },[])
 
 useEffect(() => {
