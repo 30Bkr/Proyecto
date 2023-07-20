@@ -1,6 +1,6 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
+import { useRouter } from "next/navigation";
+
 import { useState } from 'react'
 
 
@@ -10,18 +10,28 @@ export default function Home() {
   const [nombre, setNombre] = useState("")
   const [contrasena, setContrasena] = useState('')
   const [error, setError] = useState(false)
+  const [error1, setError1] = useState(false)
+  const router = useRouter();
+
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if(nombre === "" || contrasena === ""){
       setError(true)
+      setError1(false)
+      return
+    } else if(nombre === "admin@mail.com" && contrasena === "hola"){
+        router.push('/principal')
+        setError(false);
+        setError1(false);
+    } else {
+      setError1(true)
+      setError(false)
       return
     }
     setError(false)
 }
-
-
 
 
   return (
@@ -54,6 +64,8 @@ export default function Home() {
             </button>
           </form>
           {error && <p>Llenar todos los campos</p>}
+          {error1 && <p>Usuario o contrasena incorrecta</p>}
+
           
         </div>
       </div>

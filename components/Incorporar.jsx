@@ -9,23 +9,21 @@ import { useRouter } from "next/navigation";
 
 const Incorporar = () => {
   const [task, setTask] = useState();
+
   const {createTask} = useTasks();
   const { createInve } = useTasks();
-
-
-  const [code, setCode] = useState();
+  
   const router = useRouter()
 
   const handleChange = (e) => {
     setTask({...task, [e.target.name]: e.target.value});
-    setCode({...code, [e.target.name]: e.target.value});
   }
 
 
   const handleSubmit= (e) => {
     e.preventDefault();
     createTask(task.id, task.precio, task.cantidad, task.img)
-    createInve(code.id, code.codigo, code.descripcion, code.cantidadI)
+    createInve(task.id, task.codigo, task.descripcion, task.cantidadI)
     router.push('/inventario')
 
   }
