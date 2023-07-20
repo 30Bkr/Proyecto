@@ -9,64 +9,75 @@ export const useTasks = () => {
   return context;
 };
 
-
 export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([
     {
-        id: 'Casco de Polietileno',
-        precio: '$--',
-        cantidad: '20 Unidades',
-        img: '/casco.jpg'
+      id: "Casco de Polietileno",
+      precio: "$--",
+      cantidad: "20 Unidades",
+      img: "/casco.jpg",
     },
     {
-        id: 'Chalecos',
-        precio: '$--',
-        cantidad: '20 Unidades',
-        img: '/chaleco.jpg',
+      id: "Chalecos",
+      precio: "$--",
+      cantidad: "20 Unidades",
+      img: "/chaleco.jpg",
     },
     {
-        id: 'Lentes de Seguridad',
-        precio: '$--',
-        cantidad: '6 Unidades',
-        img: '/descarga.jpg'
+      id: "Lentes de Seguridad",
+      precio: "$--",
+      cantidad: "6 Unidades",
+      img: "/descarga.jpg",
     },
     {
-        id: 'Guantes de Cuero',
-        precio: '$--',
-        cantidad: '6 Unidades',
-        img: '/guantes.jpg'
+      id: "Guantes de Cuero",
+      precio: "$--",
+      cantidad: "6 Unidades",
+      img: "/guantes.jpg",
     },
     {
-        id: 'Mascara Panoramica',
-        precio: '$--',
-        cantidad: '1 Unidad',
-        img: '/mascara.jpg'
+      id: "Mascara Panoramica",
+      precio: "$--",
+      cantidad: "1 Unidad",
+      img: "/mascara.jpg",
     },
     {
-        id: 'Protectores Auditivos',
-        precio: '$--',
-        cantidad: '1 Unidad',
-        img: '/protector.jpg'
-    }
-  
+      id: "Protectores Auditivos",
+      precio: "$--",
+      cantidad: "1 Unidad",
+      img: "/protector.jpg",
+    },
   ]);
-  useEffect(()=>{
-    const item = localStorage.getItem("tasks")
-    const tasks = JSON.parse(item)
-    if (item.length > 0 ) {
-      setTasks(tasks)
-    } else {}
-  },[])
+  useEffect(() => {
+    const item = localStorage.getItem("tasks");
+    const tasks = JSON.parse(item);
+    if (item.length > 0) {
+      setTasks(tasks);
+    } else {
+    }
+  }, []);
 
-useEffect(() => {
-  localStorage.setItem('tasks', JSON.stringify(tasks))
-}, [tasks])
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  const createTask = (id, precio, cantidad, img) =>
+    setTasks([
+      ...tasks,
+      {
+        id,
+        precio,
+        cantidad,
+        img: "",
+      },
+    ]);
 
   const [inve, setInve] = useState([
     {
       id: "Casco de Polietileno",
       codigo: "B793H1LU",
-      descripcion: "Protector de craneo para trabajos de riesgo de alto impacto",
+      descripcion:
+        "Protector de craneo para trabajos de riesgo de alto impacto",
       cantidadI: "1360",
     },
     {
@@ -91,41 +102,45 @@ useEffect(() => {
     {
       id: "Mascara Panoramica",
       codigo: "A1B3H1LV",
-      descripcion: "Protector de vías respiratorios, protección ocular y facial simultanea",
+      descripcion:
+        "Protector de vías respiratorios, protección ocular y facial simultanea",
       cantidadI: "117",
     },
     {
       id: "Protectores Auditivos",
       codigo: "BBB3H1LV",
-      descripcion: "Protector de audicion para evitar la exposición a sonidos fuertes",
+      descripcion:
+        "Protector de audicion para evitar la exposición a sonidos fuertes",
       cantidadI: "75",
     },
-    
-  ])
+  ]);
 
-  const createInve = (id, codigo, descripcion, cantidadI) => 
-  setInve([
-    ...inve, {
-      id, codigo, descripcion, cantidadI, 
-    }
-  ])
-
-  const createTask = (id, precio, cantidad, img) => 
-    setTasks([
-      ...tasks,
+  const createInve = (id, codigo, descripcion, cantidadI) =>
+    setInve([
+      ...inve,
       {
-      id,
-      precio,
-      cantidad,
-      img: ""
-    }]);
+        id,
+        codigo,
+        descripcion,
+        cantidadI,
+      },
+    ]);
 
-  const deleteTask = (id) => 
-    setTasks(
-    [...tasks.filter(task  => task.id !== id )]);
+  const deleteTask = (id) =>
+    setTasks([...tasks.filter((task) => task.id !== id)]);
 
-  
-  
+  const [usuario, setUsuario] = useState([
+    { id: "admin@mail.com", contrasena: "hola" },
+  ]);
+
+  const createUsuario = (id, contrasena) =>
+    setUsuario([
+      ...usuario,
+      {
+        id,
+        contrasena,
+      },
+    ]);
 
   return (
     <TaskContext.Provider
@@ -135,6 +150,7 @@ useEffect(() => {
         createTask,
         deleteTask,
         createInve,
+        createUsuario,
       }}
     >
       {children}

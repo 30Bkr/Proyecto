@@ -12,7 +12,7 @@ const productos = () => {
   // const [ producto, setProducto ] = useState(Ejemplares)
   const {tasks} = useTasks()
 
-
+  console.log(tasks)
   return (
     <>
       <main className='grid grid-cols-3 grid-rows-2 m-4 p-4 px-12'> 

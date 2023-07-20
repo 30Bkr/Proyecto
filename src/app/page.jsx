@@ -1,6 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation";
-
+import { useTasks } from "@/context/TasksContext";
 import { useState } from 'react'
 
 
@@ -13,7 +13,9 @@ export default function Home() {
   const [error1, setError1] = useState(false)
   const router = useRouter();
 
+  const {usuario} = useTasks()
 
+  console.log(usuario)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -21,7 +23,7 @@ export default function Home() {
       setError(true)
       setError1(false)
       return
-    } else if(nombre === "admin@mail.com" && contrasena === "hola"){
+    } else if(nombre === usuario.id && contrasena === usuario.contrasena){
         router.push('/principal')
         setError(false);
         setError1(false);
@@ -62,6 +64,7 @@ export default function Home() {
             <button className='w-56 bg-blue-200 p-2 rounded-lg my-4' >
             <a href="/principal" className='w-56'>Iniciar Sesión</a>        
             </button>
+            <p>No tienes cuenta? <a href="/registro" className="text-blue-600  hover:underline">Crear cuenta</a></p>
           </form>
           {error && <p>Llenar todos los campos</p>}
           {error1 && <p>Usuario o contrasena incorrecta</p>}

@@ -61,7 +61,7 @@ const DatosT = () => {
     <>
       <Card>
         <Title>Inventario</Title>
-        <Table classid="mt-5">
+        <Table className="mt-5">
           <TableHead>
             <TableRow>
               <TableHeaderCell>Código</TableHeaderCell>

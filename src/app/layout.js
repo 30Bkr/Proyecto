@@ -14,9 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className='bg-gray-100'>
-        <Rutas>
-          <TasksProvider>{children}</TasksProvider>
-        </Rutas>       
+        
+          <TasksProvider>
+              <Rutas>{children}</Rutas> 
+          </TasksProvider>
+              
       </body>
     </html>
   )
