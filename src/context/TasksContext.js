@@ -48,14 +48,14 @@ export const TasksProvider = ({ children }) => {
       img: "/protector.jpg",
     },
   ]);
-  useEffect(() => {
-    const item = localStorage.getItem("tasks");
-    const tasks = JSON.parse(item);
-    if (item.length > 0) {
-      setTasks(tasks);
-    } else {
-    }
-  }, []);
+  // useEffect(() => {
+  //   const item = localStorage.getItem("tasks");
+  //   const tasks = JSON.parse(item);
+  //   if (item.length > 0) {
+  //     setTasks(tasks);
+  //   } else {
+  //   }
+  // }, []);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -130,15 +130,16 @@ export const TasksProvider = ({ children }) => {
     setTasks([...tasks.filter((task) => task.id !== id)]);
 
   const [usuario, setUsuario] = useState([
-    { id: "admin@mail.com", contrasena: "hola" },
+    { id: "admin@mail.com", contrasena: "hola", name:"Dueno" }, { id: "admin1@mail.com", contrasena: "hola1", name:"Jefe" }
   ]);
 
-  const createUsuario = (id, contrasena) =>
+  const createUsuario = (nuevoU, nuevaC, nombre) =>
     setUsuario([
       ...usuario,
       {
-        id,
-        contrasena,
+        idu: nuevoU,
+        contrasenau: nuevaC,
+        name: nombre
       },
     ]);
 
@@ -147,6 +148,7 @@ export const TasksProvider = ({ children }) => {
       value={{
         tasks,
         inve,
+        usuario,
         createTask,
         deleteTask,
         createInve,

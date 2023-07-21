@@ -5,8 +5,10 @@ import { useTasks } from '@/context/TasksContext'
 
 
 const page = () => {
-  const [nombre, setNombre] = useState("")
-  const [contrasena, setContrasena] = useState('')
+  const [nombre, setNombre] = useState({ id: ""})
+  const [contrasena, setContrasena] = useState({ contrasena: ""})
+  const [name, setName] = useState({ name: ""})
+
  const router = useRouter()
 
   const [nuevo, setNuevo] = useState()
@@ -14,27 +16,47 @@ const page = () => {
 
 
     const { createUsuario } = useTasks();
+    
 
 //   const router = useRouter();
+//idea con metodo map. para obtener solo el id o solo contrasena. guardando en variable
 
-const handleChange = (e) => {
-    setNuevo({...nuevo, [e.target.name]: e.target.value});
+const handleChange0 = (e) => {
+  setName({...name, [e.target.name]: e.target.value});
+}
+
+const handleChange1 = (e) => {
+    setNombre({...nombre, [e.target.name]: e.target.value});
   }
 
+  const handleChange2 = (e) => {
+    setContrasena({...contrasena, [e.target.name]: e.target.value});
+  }
+  const mira = nombre.id
+  const asi = mira.id
+  // console.log('primero',mira)
 
 
+  // console.log('state',nombre)
   const handleSubmit= (e) => {
     e.preventDefault();
-    if( nombre === "" || contrasena == ""){
+    const mira = nombre.id
+    const esto = contrasena.contrasena
+    const es = name.name
+    if( mira === "" || esto == ''){
         setError(true)
+        
     } else{
-       createUsuario(nuevo.id, nuevo.contrasena)
+      setError(false)
+       createUsuario(mira, esto, name)
         router.push('/') 
+        
     }
     
 
   }
 
+  
 
 
   return (
@@ -49,10 +71,17 @@ const handleChange = (e) => {
           >
             <div className='my-4'>
             <label></label>
+            <input type="text"  className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="nombre" 
+            name="name"
+            onChange={handleChange0}
+
+            />
+            </div>
+            <div className='my-4'>
+            <label></label>
             <input type="email"  className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="correo@email.com" 
             name="id"
-            value={nombre}
-            onChange={handleChange}
+            onChange={handleChange1}
 
             />
             </div>
@@ -60,8 +89,7 @@ const handleChange = (e) => {
             <label></label>
             <input type="password" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 " placeholder="Contraseña" 
             name="contrasena"
-            value={contrasena}
-            onChange={handleChange}
+            onChange={handleChange2}
             />
             </div>
             <button className='w-56 bg-blue-200 p-2 rounded-lg my-4' >

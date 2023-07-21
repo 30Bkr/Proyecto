@@ -7,27 +7,46 @@ import { useState } from 'react'
 
 
 export default function Home() {
-  const [nombre, setNombre] = useState("")
+  const [nombre, setNombre] = useState([])
   const [contrasena, setContrasena] = useState('')
   const [error, setError] = useState(false)
   const [error1, setError1] = useState(false)
   const router = useRouter();
-
   const {usuario} = useTasks()
 
-  console.log(usuario)
-
+  // console.log('usuario:',usuario)
+ 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    const prueba = usuario.find(item => item.id == nombre)
+    // console.log('prueba si',prueba)
+
+    const prueba2 = prueba?.id
+    const prueba3 = prueba?.contrasena
+    // console.log('email:',prueba2)
+    // console.log('contrasena:',prueba3)
+
+    const pruebaU = usuario.find(item => item.idu == nombre)
+
+    const pruebaU1 = pruebaU?.idu
+    const pruebaU2 = pruebaU?.contrasenau
+
     if(nombre === "" || contrasena === ""){
       setError(true)
       setError1(false)
       return
-    } else if(nombre === usuario.id && contrasena === usuario.contrasena){
+    } else if(nombre === prueba2  && contrasena === prueba3){
         router.push('/principal')
         setError(false);
         setError1(false);
-    } else {
+        console.log('entraste admin')
+    } else if(nombre === pruebaU1  && contrasena === pruebaU2){
+      router.push('/usuario')
+      setError(false);
+      setError1(false);
+      console.log('entraste usuario')
+  }else {
       setError1(true)
       setError(false)
       return
@@ -62,12 +81,12 @@ export default function Home() {
             />
             </div>
             <button className='w-56 bg-blue-200 p-2 rounded-lg my-4' >
-            <a href="/principal" className='w-56'>Iniciar Sesión</a>        
+            Iniciar Sesión    
             </button>
             <p>No tienes cuenta? <a href="/registro" className="text-blue-600  hover:underline">Crear cuenta</a></p>
           </form>
-          {error && <p>Llenar todos los campos</p>}
-          {error1 && <p>Usuario o contrasena incorrecta</p>}
+          {error && <p className="text-red-400">Llenar todos los campos</p>}
+          {error1 && <p className="text-red-600">Usuario o contrasena incorrecta</p>}
 
           
         </div>
