@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useTasks } from '@/context/TasksContext'
+import Rutas from '../../../components/Rutas'
 
 
 const page = () => {
@@ -10,7 +11,9 @@ const page = () => {
 
 
   return (
+    <Rutas>
     <div>bienvenido Usuario/a</div>
+    </Rutas>
   )
 }
 
