@@ -46,6 +46,7 @@
     color: #000;
 }
 .usuario{
+    position: relative;
     background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
     width: 94.5rem;
     height: 100vh;

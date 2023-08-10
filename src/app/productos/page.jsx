@@ -4,6 +4,7 @@ import '../../app/globals.css'
 import CartasDeProductos from '../../../components/Productos.jsx'
 // import { Ejemplares } from '../../../data/dataProductos'
 import { useTasks } from '@/context/TasksContext'
+import Rutas from '../../../components/Rutas'
 
 
 
@@ -15,6 +16,7 @@ const productos = () => {
   console.log(tasks)
   return (
     <>
+      <Rutas></Rutas>
       <main className='grid grid-cols-3 grid-rows-2 m-4 p-4 px-12'> 
           {/* {producto.map(eje => (
             <CartasDeProductos 

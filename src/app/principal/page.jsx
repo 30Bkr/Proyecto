@@ -2,11 +2,13 @@ import React from 'react'
 import '../../app/globals.css'
 import Usuario from '../../../components/Usuario'
 import Image from 'next/image'
+import Rutas from '../../../components/Rutas'
 
 
 const hola = () => {
   return (
     <>
+    <Rutas>
       <main className='usuario'>  
         <Usuario />
         <div className='flex flex-col justify-center p-16 mb-32'>
@@ -22,6 +24,7 @@ const hola = () => {
             height={640}
         />
       </main>
+      </Rutas>
     </>
   )
 }

@@ -1,4 +1,3 @@
-import Rutas from '../../components/Rutas'
 import './globals.css'
 import { TasksProvider } from '@/context/TasksContext'
 import Home from './page'
@@ -16,7 +15,7 @@ export default function RootLayout({ children }) {
       <body className='bg-gray-100'>
         
           <TasksProvider>
-              <Rutas>{children}</Rutas> 
+              {children}
           </TasksProvider>
               
       </body>

@@ -1,10 +1,10 @@
 import React from "react";
 import '../src/app/globals.css'
 
-const Rutas = ({children}) => {
+const Rutas = ({children , color}) => {
   return (
     <>
-      <header>
+      <header className="fixed">
         <nav className="hola">
           <div className="flex">
             <ul className="flex p-1">
@@ -12,7 +12,7 @@ const Rutas = ({children}) => {
                 <a href="/principal">Inicio</a>
               </li>
               <li className="no">
-                <a href="/productos">Productos</a>
+                <a href="/productos" >Productos</a>
               </li>
               <li className="no">
                 <a href="/ventas">Ventas</a>
@@ -34,7 +34,7 @@ const Rutas = ({children}) => {
           </div>
         </nav>
       </header>
-      <main>
+      <main >
         {children}
       </main>
     </>

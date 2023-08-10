@@ -8,7 +8,7 @@ import { useTasks } from "@/context/TasksContext";
 const CartasDeProductos = (props) => { 
   const {deleteTask} = useTasks()
   return(
-  <Card className="max-w-xs mx-auto m-4 flex hover:ease-in duration-300 " decoration="top" decorationColor="indigo">
+  <Card className="max-w-xs mx-auto m-4 flex hover:ease-in duration-300 md:bg-red-600" decoration="top" decorationColor="indigo">
     <div>
         <Text>{props.id}</Text>
         <Metric>{props.precio}</Metric>
